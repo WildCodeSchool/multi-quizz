@@ -15,6 +15,13 @@ const infoMessages = {
   addSuccess: "Information ajoutée avec succès",
   notFound: "Aucune information trouvée avec cet ID",
   updateSuccess: "Information mise à jour avec succès",
-}
+};
 
-export { infoMessages }
+export const quizMessages = {
+  notFound: "Quiz non trouvé",
+  error: "Erreur lors du chargement",
+  loadingError: "Impossible de charger ce quiz",
+  loadingErrorQuizzes: "Impossible de charger les quiz",
+};
+
+export { infoMessages };
