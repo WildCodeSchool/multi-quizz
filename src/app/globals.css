@@ -5,4 +5,9 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: montserrat;
 }

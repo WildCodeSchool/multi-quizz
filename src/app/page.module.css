@@ -1,45 +1,106 @@
 .backgroundImage {
   background-image: url("/bghp.png");
+  position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  min-height: 200vh;
+  background-position: center 30%;
   width: 100%;
-  position: absolute;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .mainContainer {
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 46px 0;
 }
 
 .navContainer {
-  width: 700px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 3px solid black;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-
+  margin: 0 auto;
+  width: 1000px;
+  max-width: 90%;
   transform: skewX(-40deg);
-  transform-origin: center;
+  height: 117px;
+  border: 3px solid rgb(0, 0, 0);
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.navContent {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+}
+.linkAbout,
+.linkContact,
+.linkAccount,
+.linkSubscription {
+  --angle: -80deg;
+  width: 160px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 3px solid #000;
+  border-top-right-radius: 17px;
+  border-bottom-left-radius: 17px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transform: rotate(var(--angle)) skewX(-30deg);
+  transform-origin: center;
 }
 
-.ImgButtonQuiz {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+.linkLeft,
+.linkRight {
   display: flex;
-  gap: 20px;
+  gap: 4px;
+}
+
+.about,
+.contact,
+.compte,
+.inscription {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.linkAbout {
+  background-color: #296d38;
+}
+
+.linkContact {
+  background-color: #ff9d14;
+}
+
+.linkAccount {
+  background-color: #148eff;
+}
+
+.linkSubscription {
+  background-color: #ff2e0d;
+}
+.ImgButtonQuiz {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 85%;
 }
 
 .ImgButtonQuiz img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
 }

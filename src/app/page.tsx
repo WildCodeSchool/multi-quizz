@@ -6,22 +6,32 @@ export default function Home() {
     <div className={styles.backgroundImage}>
       <div className={styles.mainContainer}>
         <div className={styles.navContainer}>
-          <nav>
-            <Link href="/about">
-              <button className={styles.button}>À propos</button>
-            </Link>
+          <nav className={styles.navContent}>
+            <div className={styles.linkLeft}>
+              <div className={styles.linkAbout}>
+                <Link className={styles.about} href="/about">
+                  à propos
+                </Link>
+              </div>
+              <div className={styles.linkContact}>
+                <Link className={styles.contact} href="/contact">
+                  contact
+                </Link>
+              </div>
+            </div>
 
-            <Link href="/contact">
-              <button className={styles.button}>Contact</button>
-            </Link>
-
-            <Link href="/compte">
-              <button className={styles.button}>Compte</button>
-            </Link>
-
-            <Link href="/inscription">
-              <button className={styles.button}>Inscription</button>
-            </Link>
+            <div className={styles.linkRight}>
+              <div className={styles.linkAccount}>
+                <Link className={styles.compte} href="/compte">
+                  compte
+                </Link>
+              </div>
+              <div className={styles.linkSubscription}>
+                <Link className={styles.inscription} href="/inscription">
+                  inscription
+                </Link>
+              </div>
+            </div>
           </nav>
         </div>
 
