@@ -40,39 +40,44 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 50px;
   align-items: center;
-  padding: 0 80px;
 }
 .linkAbout,
 .linkContact,
 .linkAccount,
 .linkSubscription {
-  --angle: -80deg;
-  width: 160px;
+  --angle: -90deg;
+  width: 150px;
   height: 70px;
+  padding: 0 px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 3px solid #000;
-  border-top-right-radius: 17px;
-  border-bottom-left-radius: 17px;
-  border-top-left-radius: 5px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 8px;
   border-bottom-right-radius: 5px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   transform: rotate(var(--angle)) skewX(-30deg);
   transform-origin: center;
+  margin-right: -50px;
 }
 
 .linkLeft,
 .linkRight {
   display: flex;
 }
-
+.linkRight {
+  margin-right: 50px;
+}
 .About,
 .Contact,
 .Account,
 .Subscription {
   display: inline-block;
+  padding: 30px;
   color: #fff;
   text-decoration: none;
   font-weight: 500;
@@ -102,5 +107,25 @@
 
 .ImgButtonQuiz img {
   width: 320px;
-  height: 320px;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .navContainer {
+    display: none;
+  }
+
+  .ImgButtonQuiz {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .ImgButtonQuiz img {
+    width: 200px;
+  }
+}
+
+.ImgButtonQuiz img {
+  width: 300px;
 }
