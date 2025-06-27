@@ -66,16 +66,16 @@
 .linkLeft,
 .linkRight {
   display: flex;
-  gap: 4px;
 }
 
-.about,
-.contact,
-.compte,
-.inscription {
+.About,
+.Contact,
+.Account,
+.Subscription {
   display: inline-block;
   color: #fff;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .linkAbout {
@@ -101,6 +101,6 @@
 }
 
 .ImgButtonQuiz img {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
 }

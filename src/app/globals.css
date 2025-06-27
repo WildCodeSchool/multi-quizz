@@ -8,6 +8,20 @@ body {
   box-sizing: border-box;
 }
 
+:root {
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-geist-mono);
+}
+
 body {
-  font-family: montserrat;
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+code,
+pre {
+  font-family: var(--font-mono);
 }
