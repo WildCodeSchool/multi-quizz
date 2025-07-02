@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+.burgerButton {
+  display: none;
+}
+
 .mainContainer {
   height: 100vh;
   overflow: hidden;
@@ -111,6 +115,12 @@
 }
 
 @media (max-width: 767px) {
+  .burgerButton {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
   .navContainer {
     display: none;
   }
@@ -119,13 +129,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    height: 100%;
   }
-
-  .ImgButtonQuiz img {
-    width: 200px;
-  }
-}
-
-.ImgButtonQuiz img {
-  width: 300px;
 }
