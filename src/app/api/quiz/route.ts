@@ -4,7 +4,9 @@ import { quizMessages } from "@/data/responseMessages";
 
 export async function GET() {
   try {
-    const [quizzes] = await db.query("SELECT id, title FROM Quizzes");
+    const [quizzes] = await db.query(
+      "SELECT id, title, picture, slug FROM Quizzes"
+    );
 
     return NextResponse.json({ quizzes });
   } catch (error) {
