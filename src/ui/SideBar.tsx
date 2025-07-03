@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./SideBar.module.css";
+import Link from "next/link";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -19,27 +20,27 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           &times;
         </button>
 
-        <nav>
-          <ul>
-            <li>
-              <a href="about" onClick={onClose}>
-                About
-              </a>
+        <nav className={styles.sidebarNavContent}>
+          <ul className={styles.sidebarUl}>
+            <li className={styles.about}>
+              <Link href="/about" onClick={onClose}>
+                À propos
+              </Link>
             </li>
-            <li>
-              <a href="contact" onClick={onClose}>
+            <li className={styles.contact}>
+              <Link href="/contact" onClick={onClose}>
                 Contact
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="account" onClick={onClose}>
-                Account
-              </a>
+            <li className={styles.account}>
+              <Link href="/compte" onClick={onClose}>
+                Compte
+              </Link>
             </li>
-            <li>
-              <a href="inscription" onClick={onClose}>
-                Subscription
-              </a>
+            <li className={styles.subscription}>
+              <Link href="/inscription" onClick={onClose}>
+                Inscription
+              </Link>
             </li>
           </ul>
         </nav>
