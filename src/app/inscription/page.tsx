@@ -1,4 +1,4 @@
 import Home from "../page";
-export default function Inscription() {
+export default function subscription() {
   return <h1>ma page inscription</h1>;
 }

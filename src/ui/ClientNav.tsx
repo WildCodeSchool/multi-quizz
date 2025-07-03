@@ -4,7 +4,7 @@ import { useState } from "react";
 import ButtonBurger from "@/ui/BurgerButton";
 import Sidebar from "@/ui/SideBar";
 
-export default function ClientNav({ children }: { children: React.ReactNode }) {
+export default function ClientNav() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const openSidebar = () => setIsSidebarOpen(true);
@@ -14,7 +14,6 @@ export default function ClientNav({ children }: { children: React.ReactNode }) {
     <>
       <ButtonBurger onClick={openSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
-      {children}
     </>
   );
 }

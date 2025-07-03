@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./Sidebar.module.css";
+import styles from "./SideBar.module.css";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -22,22 +22,22 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         <nav>
           <ul>
             <li>
-              <a href="#about" onClick={onClose}>
+              <a href="about" onClick={onClose}>
                 About
               </a>
             </li>
             <li>
-              <a href="#contact" onClick={onClose}>
+              <a href="contact" onClick={onClose}>
                 Contact
               </a>
             </li>
             <li>
-              <a href="#account" onClick={onClose}>
+              <a href="account" onClick={onClose}>
                 Account
               </a>
             </li>
             <li>
-              <a href="#subscription" onClick={onClose}>
+              <a href="inscription" onClick={onClose}>
                 Subscription
               </a>
             </li>
