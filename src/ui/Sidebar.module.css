@@ -77,3 +77,9 @@
   gap: 15px;
   margin-left: 45px;
 }
+
+.closeBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

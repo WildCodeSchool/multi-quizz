@@ -13,8 +13,8 @@
 @media (max-width: 767px) {
   .burger {
     display: block;
-  }
-  .icon {
-    width: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 }

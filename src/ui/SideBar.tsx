@@ -17,7 +17,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       <aside className={styles.sidebar}>
         <button className={styles.closeBtn} onClick={onClose}>
-          <img src="/retour.png" alt="retour" className={styles.icon} />;
+          <img src="/retour.png" alt="retour" className={styles.icon} />
         </button>
 
         <nav className={styles.sidebarNavContent}>
