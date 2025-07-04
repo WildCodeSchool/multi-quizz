@@ -1,4 +1,4 @@
 import Home from "../page";
-export default function account() {
+export default function Account() {
   return <h1>ma page Compte</h1>;
 }

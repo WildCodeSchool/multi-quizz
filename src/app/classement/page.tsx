@@ -1,4 +1,4 @@
 import Home from "../page";
-export default function ranking() {
+export default function Ranking() {
   return <h1>ma page classement</h1>;
 }
