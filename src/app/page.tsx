@@ -36,16 +36,16 @@ export default function Home() {
         </div>
 
         <section className={styles.ImgButtonQuiz}>
-          <Link href="/quiz1">
+          <Link href="/videogame">
             <img src="/logoq1.png" alt="logo quiz1" />
           </Link>
-          <Link href="/quiz2">
+          <Link href="/film">
             <img src="/logoq2.png" alt="logo quiz2" />
           </Link>
-          <Link href="/quiz3">
+          <Link href="/knowledge">
             <img src="/logoq3.png" alt="logo quiz3" />
           </Link>
-          <Link href="/quiz4">
+          <Link href="/newtech">
             <img src="/logoq4.png" alt="logo quiz4" />
           </Link>
         </section>
