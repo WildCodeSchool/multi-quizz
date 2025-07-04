@@ -1,12 +1,12 @@
 import { quizMessages } from "@/data/responseMessages";
 import { apiRoutes } from "@/data/ROUTES";
-import { QuizListModel } from "@/model/QuizListModel";
+import { QuizModel } from "@/model/quizModel";
 
-export async function getAllQuizzes(): Promise<QuizListModel[]> {
+export async function getAllQuizzes(): Promise<QuizModel[]> {
   const res = await fetch(apiRoutes.QUIZ, { method: "GET" });
   if (!res.ok) throw new Error(quizMessages.loadingErrorQuizzes);
   const data = await res.json();
   return data.quizzes.map(
-    (q: QuizListModel) => new QuizListModel(q.id, q.title, q.picture, q.slug)
+    (q: QuizModel) => new QuizModel(q.id, q.title, q.picture, q.slug)
   );
 }

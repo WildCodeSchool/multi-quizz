@@ -1,4 +1,4 @@
-export class QuizListModel {
+export class QuizModel {
   constructor(
     private _id: number,
     private _title: string,
