@@ -4,13 +4,15 @@ import { quizMessages } from "@/data/responseMessages";
 
 export async function GET() {
   try {
-    const [quizzes] = await db.query("SELECT id, title FROM Quizzes");
+    const [questions] = await db.query(
+      "SELECT id, question, quiz_id FROM Questions"
+    );
 
-    return NextResponse.json({ quizzes });
+    return NextResponse.json(questions);
   } catch (error) {
-    console.error("Erreur MySQL (GET quizzes):", error);
+    console.error("Error fetching questions:", error);
     return NextResponse.json(
-      { error: quizMessages.errorServer },
+      { message: quizMessages.errorServer },
       { status: 500 }
     );
   }

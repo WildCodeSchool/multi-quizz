@@ -24,4 +24,5 @@ export const quizMessages = {
   loadingErrorQuizzes: "Impossible de charger les quiz",
   errorServer: "Erreur serveur, veuillez réessayer plus tard",
   invalidQuizzId: "Id du quiz invalide, veuillez vérifier les données",
+  loadingErrorQuestions: "Impossible de charger les questions",
 };

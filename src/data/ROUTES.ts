@@ -2,7 +2,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const appUrl = process.env.NEXT_PUBLIC_APP_URL;
 const apiRoutes = {
   INFOS: `${apiUrl}/api/infos`,
-  QUIZ: `${apiUrl}/api/quiz`,
+  QUESTIONS: `${apiUrl}/api/questions`,
 };
 
 const appRoutes = {
@@ -10,6 +10,10 @@ const appRoutes = {
   INFOS_ID: (id: number) => `${appUrl}/infos/${id}`,
   INFOS_ADD: `${appUrl}/infos/ajouter-info`,
   INFOS_EDIT: (id: number) => `${appUrl}/infos/${id}/editer-info`,
+
+  QUESTIONS: `${appUrl}/questions`,
+  QUESTIONS_ADD: `${appUrl}/questions/ajouter-question`,
+  QUESTIONS_EDIT: (id: number) => `${appUrl}/questions/${id}/editer-question`,
 };
 
 export { apiRoutes, appRoutes };

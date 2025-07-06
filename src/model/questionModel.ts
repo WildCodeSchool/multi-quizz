@@ -1,10 +1,8 @@
-import { AnswerModel } from "./answerModel";
-
 export class QuestionModel {
   constructor(
     private _id: number,
     private _question: string,
-    private _answers: AnswerModel[]
+    private _quiz_id: number
   ) {}
 
   get id(): number {
@@ -18,10 +16,10 @@ export class QuestionModel {
     this._question = value;
   }
 
-  get answers(): AnswerModel[] {
-    return this._answers;
+  get quiz_id(): number {
+    return this._quiz_id;
   }
-  set answers(value: AnswerModel[]) {
-    this._answers = value;
+  set quiz_id(value: number) {
+    this._quiz_id = value;
   }
 }
