@@ -45,7 +45,7 @@ export default function Home() {
           <Link href="/quiz/3">
             <img src="/logoq3.png" alt="logo quiz3" />
           </Link>
-          <Link href="/quiz/">
+          <Link href="/quiz/4">
             <img src="/logoq4.png" alt="logo quiz4" />
           </Link>
         </section>
