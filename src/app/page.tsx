@@ -1,38 +1,58 @@
-import Link from "next/link";
+import Image from "next/image";
 import styles from "./page.module.css";
+import { appRoutes } from "@/data/ROUTES";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.backgroundImage}>
-      <div className={styles.mainContainer}>
-        <div className={styles.navContainer}>
-          <nav className={styles.navContent}>
-            <div className={styles.linkLeft}>
-              <div className={styles.linkAbout}>
-                <Link className={styles.About} href="/About">
-                  à propos
-                </Link>
-              </div>
-              <div className={styles.linkContact}>
-                <Link className={styles.Contact} href="/Contact">
-                  contact
-                </Link>
-              </div>
-            </div>
+    <div className={styles.page}>
+      <main className={styles.main}>
+        <Image
+          className={styles.logo}
+          src="/next.svg"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
+        />
+        <ol>
+          <li>
+            Get started by editing <code>src/app/page.tsx</code>.
+          </li>
+          <li>Save and see your changes instantly.</li>
+          <li>
+            Now go on{" "}
+            <Link className={styles.secondary} href={appRoutes.INFOS}>
+              Infos
+            </Link>{" "}
+            page to test a sample of NextJS app.
+          </li>
+        </ol>
 
-            <div className={styles.linkRight}>
-              <div className={styles.linkAccount}>
-                <Link className={styles.Account} href="/Account">
-                  compte
-                </Link>
-              </div>
-              <div className={styles.linkSubscription}>
-                <Link className={styles.Subscription} href="/Subscription">
-                  inscription
-                </Link>
-              </div>
-            </div>
-          </nav>
+        <div className={styles.ctas}>
+          <a
+            className={styles.primary}
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className={styles.logo}
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={20}
+              height={20}
+            />
+            Deploy now
+          </a>
+          <a
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.secondary}
+          >
+            Read our docs
+          </a>
         </div>
 
         <section className={styles.ImgButtonQuiz}>
