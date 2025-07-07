@@ -116,19 +116,18 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: 90%;
-  max-width: 900px;
   padding: 20px 0;
   margin-top: auto;
 }
 
 .ImgButtonQuiz img {
   width: 25vw;
-  max-width: 200px;
+  max-width: 250px;
   height: auto;
   display: block;
   cursor: pointer;
   transition: transform 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .ImgButtonQuiz img:hover {
@@ -139,7 +138,6 @@
   .ImgButtonQuiz {
     width: 95%;
     gap: 15px;
-    margin-top: 30px;
     margin-top: auto;
   }
 

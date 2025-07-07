@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./SideBar.module.css";
+import styles from "./Sidebar.module.css";
 import Link from "next/link";
 
 interface SidebarProps {
