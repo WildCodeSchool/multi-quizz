@@ -1,35 +1,56 @@
 export const questionsFilms = [
-  { id: 11, quiz_id: 2, question: "Qui a réalisé Inception ?" },
+  { id: 11, quiz_id: 2, question: "Qui a réalisé Inception ?", number: 1 },
   {
     id: 12,
     quiz_id: 2,
     question: "Quel film a gagné l'Oscar du meilleur film en 2020 ?",
+    number: 2,
   },
-  { id: 13, quiz_id: 2, question: "Dans quel film trouve-t-on Dark Vador ?" },
+  {
+    id: 13,
+    quiz_id: 2,
+    question: "Dans quel film trouve-t-on Dark Vador ?",
+    number: 3,
+  },
   {
     id: 14,
     quiz_id: 2,
     question: "Quel est le plus gros succès mondial du cinéma ?",
+    number: 4,
   },
-  { id: 15, quiz_id: 2, question: "Quel acteur joue Iron Man ?" },
-  { id: 16, quiz_id: 2, question: "Quel film met en scène Nemo le poisson ?" },
-  { id: 17, quiz_id: 2, question: "Qui joue le Joker dans The Dark Knight ?" },
+  { id: 15, quiz_id: 2, question: "Quel acteur joue Iron Man ?", number: 15 },
+  {
+    id: 16,
+    quiz_id: 2,
+    question: "Quel film met en scène Nemo le poisson ?",
+    number: 6,
+  },
+  {
+    id: 17,
+    quiz_id: 2,
+    question: "Qui joue le Joker dans The Dark Knight ?",
+    number: 7,
+  },
   {
     id: 18,
     quiz_id: 2,
     question: "Dans quel film Will Smith combat-il des aliens le 4 juillet ?",
+    number: 8,
   },
   {
     id: 19,
     quiz_id: 2,
     question: "Quel film commence par 'Il était une fois en Amérique' ?",
+    number: 9,
   },
   {
     id: 20,
     quiz_id: 2,
     question: "Dans quel film entend-on la chanson 'Let it Go' ?",
+    number: 10,
   },
 ];
+
 export const answersFilms = [
   { question_id: 11, answer: "Christopher Nolan", is_correct: true },
   { question_id: 11, answer: "Steven Spielberg", is_correct: false },

@@ -2,7 +2,8 @@ export class QuestionModel {
   constructor(
     private _id: number,
     private _question: string,
-    private _quiz_id: number
+    private _quiz_id: number,
+    private _number: number
   ) {}
 
   get id(): number {
@@ -21,5 +22,12 @@ export class QuestionModel {
   }
   set quiz_id(value: number) {
     this._quiz_id = value;
+  }
+
+  get number(): number {
+    return this._number;
+  }
+  set number(value: number) {
+    this._number = value;
   }
 }

@@ -1,30 +1,59 @@
 export const questionsCulture = [
-  { id: 21, quiz_id: 3, question: "Quel est le plus grand océan du monde ?" },
+  {
+    id: 21,
+    quiz_id: 3,
+    question: "Quel est le plus grand océan du monde ?",
+    number: 1,
+  },
   {
     id: 22,
     quiz_id: 3,
     question: "Combien y a-t-il de continents sur Terre ?",
+    number: 2,
   },
-  { id: 23, quiz_id: 3, question: "Quel est le symbole chimique de l'or ?" },
+  {
+    id: 23,
+    quiz_id: 3,
+    question: "Quel est le symbole chimique de l'or ?",
+    number: 3,
+  },
   {
     id: 24,
     quiz_id: 3,
     question: "En quelle année a eu lieu la Révolution française ?",
+    number: 4,
   },
   {
     id: 25,
     quiz_id: 3,
     question: "Quelle planète est surnommée la Planète Rouge ?",
+    number: 5,
   },
-  { id: 26, quiz_id: 3, question: "Qui a écrit 'Les Misérables' ?" },
-  { id: 27, quiz_id: 3, question: "Quel est le plus long fleuve du monde ?" },
-  { id: 28, quiz_id: 3, question: "Qui a peint la Joconde ?" },
+  {
+    id: 26,
+    quiz_id: 3,
+    question: "Qui a écrit 'Les Misérables' ?",
+    number: 6,
+  },
+  {
+    id: 27,
+    quiz_id: 3,
+    question: "Quel est le plus long fleuve du monde ?",
+    number: 7,
+  },
+  { id: 28, quiz_id: 3, question: "Qui a peint la Joconde ?", number: 8 },
   {
     id: 29,
     quiz_id: 3,
     question: "Quel pays a remporté la Coupe du Monde 2018 ?",
+    number: 9,
   },
-  { id: 30, quiz_id: 3, question: "Combien de côtés a un hexagone ?" },
+  {
+    id: 30,
+    quiz_id: 3,
+    question: "Combien de côtés a un hexagone ?",
+    number: 10,
+  },
 ];
 
 export const answersCulture = [
