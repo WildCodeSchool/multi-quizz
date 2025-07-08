@@ -7,10 +7,11 @@ export async function GET(
   _req: Request,
   { params }: { params: { quizId: string; questionNumber: string } }
 ) {
-  const quizId = parseInt(params.quizId, 10);
-  const questionNumber = parseInt(params.questionNumber, 10);
+  const { quizId, questionNumber } = await params;
+  const quizIdInt = parseInt(quizId, 10);
+  const questionNumberInt = parseInt(questionNumber, 10);
 
-  if (isNaN(quizId) || isNaN(questionNumber)) {
+  if (isNaN(quizIdInt) || isNaN(questionNumberInt)) {
     return NextResponse.json(
       { error: quizMessages.invalidQuizzId },
       { status: 400 }
@@ -20,7 +21,7 @@ export async function GET(
   try {
     const [rows] = await db.query(
       "SELECT id, question, quiz_id, number FROM Questions WHERE quiz_id = ? AND number = ?",
-      [quizId, questionNumber]
+      [quizIdInt, questionNumberInt]
     );
     const results = Array.isArray(rows) ? (rows as QuestionModel[]) : [];
 

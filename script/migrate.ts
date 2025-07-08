@@ -8,25 +8,26 @@ const schema = `
   CREATE DATABASE IF NOT EXISTS \`${MYSQL_DB_NAME}\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
   USE \`${MYSQL_DB_NAME}\`;
   
-  CREATE TABLE IF NOT EXISTS Questions (
+   CREATE TABLE IF NOT EXISTS Questions (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     question VARCHAR(255) NOT NULL,
     quiz_id INT NOT NULL,
-    number INT NOT NULL,
+    number INT NOT NULL);
 
 
   CREATE TABLE IF NOT EXISTS Quizzes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     picture VARCHAR(255) NOT NULL,
-    slug VARCHAR(255) NOT NULL UNIQUE
+    slug VARCHAR(255) NOT NULL );
 
     CREATE TABLE IF NOT EXISTS Answer (
     id INT AUTO_INCREMENT PRIMARY KEY,
     question_id INT NOT NULL,
     answer VARCHAR(255) NOT NULL,
-    is_correct BOOLEAN NOT NULL,
+    is_correct BOOLEAN NOT NULL
   );
+ 
 `;
 
 const migrate = async () => {

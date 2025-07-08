@@ -62,13 +62,6 @@ const seed = async () => {
       database: MYSQL_DB_NAME,
     });
 
-    for (const { id, quiz_id, question, number } of questionsData) {
-      await connection.query(
-        "INSERT INTO Questions (id, quiz_id, question, number) VALUES (?, ?, ?, ?)",
-        [id, quiz_id, question, number]
-      );
-    }
-
     for (const { title, picture, slug } of listQuizData) {
       await connection.query(
         "INSERT INTO Quizzes (title, picture, slug) VALUES (?, ?, ?)",
@@ -76,9 +69,16 @@ const seed = async () => {
       );
     }
 
+    for (const { quiz_id, question, number } of questionsData) {
+      await connection.query(
+        "INSERT INTO Questions (quiz_id, question, number) VALUES (?, ?, ?)",
+        [quiz_id, question, number]
+      );
+    }
+
     for (const { question_id, answer, is_correct } of answersData) {
       await connection.query(
-        "INSERT INTO Answers (questionId, answer, is_correct) VALUES (?, ?, ?)",
+        "INSERT INTO Answer (question_id, answer, is_correct) VALUES (?, ?, ?)",
         [question_id, answer, is_correct]
       );
     }
