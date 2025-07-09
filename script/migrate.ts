@@ -25,7 +25,6 @@ const schema = `
     question_id INT NOT NULL,
     answer VARCHAR(255) NOT NULL,
     is_correct BOOLEAN NOT NULL
-    slug VARCHAR(255) NOT NULL UNIQUE
   );
 `;
 
