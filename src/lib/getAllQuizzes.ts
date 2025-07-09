@@ -1,6 +1,6 @@
 import { quizMessages } from "@/data/responseMessages";
 import { apiRoutes } from "@/data/ROUTES";
-import { QuizModel } from "@/model/quizModel";
+import { QuizModel } from "@/model/QuizModel";
 
 export async function getAllQuizzes(): Promise<QuizModel[]> {
   const res = await fetch(apiRoutes.QUIZ, { method: "GET" });
