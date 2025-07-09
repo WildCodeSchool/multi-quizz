@@ -8,30 +8,26 @@ const listQuizData = [
   {
     id: 1,
     title: "Jeux-Vidéos",
-    picture:
-      "public/Gemini_Generated_Image_g0hvfig0hvfig0hv-removebg-preview 1.png",
+    picture: "logoq1.png",
     slug: "jeux-videos",
   },
   {
     id: 2,
     title: "Films",
-    picture:
-      "public/Gemini_Generated_Image_g0hvfjg0hvfjg0hv-removebg-preview 1.png",
+    picture: "logoq2.png",
     slug: "films",
   },
   {
     id: 3,
     title: "Culture Générale",
-    picture:
-      "public/Gemini_Generated_Image_63nijt63nijt63ni-removebg-preview 1.png",
-    slug: "culture generale",
+    picture: "logoq3.png",
+    slug: "culture-generale",
   },
   {
     id: 4,
     title: "Nouvelles Technologies",
-    picture:
-      "public/Gemini_Generated_Image_g0hvfhg0hvfhg0hv-removebg-preview 1.png",
-    slug: "nouvelles technologies",
+    picture: "logoq4.png",
+    slug: "nouvelles-technologies",
   },
 ];
 
