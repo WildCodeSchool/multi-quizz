@@ -2,7 +2,7 @@ import { apiRoutes } from "@/data/ROUTES";
 import { QuestionModel } from "@/model/QuestionModel";
 import { quizMessages } from "@/data/responseMessages";
 
-export async function getQuestions(
+export async function getQuestion(
   quizId: number,
   questionNumber: number
 ): Promise<QuestionModel[]> {

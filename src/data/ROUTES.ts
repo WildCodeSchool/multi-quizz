@@ -21,10 +21,6 @@ const appRoutes = {
   QUIZ_ID: (id: number) => `${appUrl}/quiz/${id}`,
   QUIZ_ADD: `${appUrl}/quiz/ajouter-quiz`,
   QUIZ_EDIT: (id: number) => `${appUrl}/quiz/${id}/editer-quiz`,
-
-  ANSWERS: `${appUrl}/answers`,
-  ANSWERS_ADD: `${appUrl}/answers/ajouter-reponse`,
-  ANSWERS_EDIT: (id: number) => `${appUrl}/answers/${id}/editer-reponse`,
 };
 
 export { apiRoutes, appRoutes };
