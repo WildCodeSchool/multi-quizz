@@ -2,7 +2,9 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const appUrl = process.env.NEXT_PUBLIC_APP_URL;
 const apiRoutes = {
   INFOS: `${apiUrl}/api/infos`,
-  QUIZ: `${apiUrl}/api/quiz`,
+  QUESTION: (quizId: number, questionNumber: number) =>
+    `${apiUrl}/api/quizzes/${quizId}/questions/${questionNumber}`,
+  QUIZ: `${apiUrl}/api/quizzes`,
 };
 
 const appRoutes = {
