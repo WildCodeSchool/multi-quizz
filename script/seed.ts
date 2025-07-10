@@ -1,8 +1,26 @@
 import "dotenv/config";
 import mysql from "mysql2/promise";
+import { answersJeux, questionsJeux } from "../src/data/videosGames";
+import { answersFilms, questionsFilms } from "../src/data/movies";
+import { questionsCulture, answersCulture } from "../src/data/culture";
+import { questionsTech, answersTech } from "../src/data/tech";
 
 const { MYSQL_DB_HOST, MYSQL_DB_USER, MYSQL_DB_PASSWORD, MYSQL_DB_NAME } =
   process.env;
+
+const questionsData = [
+  ...questionsJeux,
+  ...questionsFilms,
+  ...questionsCulture,
+  ...questionsTech,
+];
+
+const answersData = [
+  ...answersJeux,
+  ...answersFilms,
+  ...answersCulture,
+  ...answersTech,
+];
 
 const listQuizData = [
   {
@@ -44,6 +62,20 @@ const seed = async () => {
       await connection.query(
         "INSERT INTO Quizzes (title, picture, slug) VALUES (?, ?, ?)",
         [title, picture, slug]
+      );
+    }
+
+    for (const { quiz_id, question, number } of questionsData) {
+      await connection.query(
+        "INSERT INTO Questions (quiz_id, question, number) VALUES (?, ?, ?)",
+        [quiz_id, question, number]
+      );
+    }
+
+    for (const { question_id, answer, is_correct } of answersData) {
+      await connection.query(
+        "INSERT INTO Answer (question_id, answer, is_correct) VALUES (?, ?, ?)",
+        [question_id, answer, is_correct]
       );
     }
 
