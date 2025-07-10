@@ -33,12 +33,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               </Link>
             </li>
             <li className={styles.account}>
-              <Link href="/compte" onClick={onClose}>
+              <Link href="/account" onClick={onClose}>
                 Compte
               </Link>
             </li>
             <li className={styles.subscription}>
-              <Link href="/inscription" onClick={onClose}>
+              <Link href="/subscription" onClick={onClose}>
                 Inscription
               </Link>
             </li>
