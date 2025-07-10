@@ -28,7 +28,7 @@ export async function GET(
 
     if (results.length === 0) {
       return NextResponse.json(
-        { error: quizMessages.notFound },
+        { error: quizMessages.notFoundQuestion },
         { status: 404 }
       );
     }
@@ -36,8 +36,8 @@ export async function GET(
     const question = results[0];
 
     const [answerRows] = await db.query(
-      "SELECT id, answer, is_correct, question_id FROM Answer WHERE question_id = ?",
-      [question.id]
+      "SELECT a.id, a.answer, a.is_correct FROM Answer AS a JOIN Questions AS q ON a.question_id = q.id WHERE q.id = ? AND q.number = ?",
+      [question.id, question.number]
     );
     const answers = Array.isArray(answerRows)
       ? (answerRows as AnswerModel[])

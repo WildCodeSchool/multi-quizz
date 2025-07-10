@@ -15,6 +15,6 @@ export async function getAnswers(
   const data = await res.json();
   return data.answers.map(
     (a: AnswerModel) =>
-      new AnswerModel(a.id, a.questionId, a.answer, a.is_correct)
+      new AnswerModel(a.id, a.question_id, a.answer, a.is_correct)
   );
 }
