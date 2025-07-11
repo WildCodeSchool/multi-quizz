@@ -1,7 +1,11 @@
 import Link from "next/link";
 import styles from "./page.module.css";
+import { getAllQuizzes } from "@/lib/getAllQuizzes";
+import { QuizModel } from "@/model/QuizModel";
 
-export default function Home() {
+export default async function Home() {
+  const quizzes: QuizModel[] = await getAllQuizzes();
+
   return (
     <div className={styles.backgroundImage}>
       <div className={styles.mainContainer}>
@@ -9,25 +13,24 @@ export default function Home() {
           <nav className={styles.navContent}>
             <div className={styles.linkLeft}>
               <div className={styles.linkAbout}>
-                <Link className={styles.About} href="/About">
+                <Link className={styles.About} href="/a-propos">
                   à propos
                 </Link>
               </div>
               <div className={styles.linkContact}>
-                <Link className={styles.Contact} href="/Contact">
+                <Link className={styles.Contact} href="/contact">
                   contact
                 </Link>
               </div>
             </div>
-
             <div className={styles.linkRight}>
               <div className={styles.linkAccount}>
-                <Link className={styles.Account} href="/Account">
+                <Link className={styles.Account} href="/compte">
                   compte
                 </Link>
               </div>
               <div className={styles.linkSubscription}>
-                <Link className={styles.Subscription} href="/Subscription">
+                <Link className={styles.Subscription} href="/inscription">
                   inscription
                 </Link>
               </div>
@@ -36,18 +39,15 @@ export default function Home() {
         </div>
 
         <section className={styles.ImgButtonQuiz}>
-          <Link href="/quiz/1">
-            <img src="/logoq1.png" alt="logo quiz1" />
-          </Link>
-          <Link href="/quiz/2">
-            <img src="/logoq2.png" alt="logo quiz2" />
-          </Link>
-          <Link href="/quiz/3">
-            <img src="/logoq3.png" alt="logo quiz3" />
-          </Link>
-          <Link href="/quiz/4">
-            <img src="/logoq4.png" alt="logo quiz4" />
-          </Link>
+          {quizzes.length > 0 ? (
+            quizzes.map((quiz) => (
+              <Link href={`/quiz/${quiz.slug}`} key={quiz.id}>
+                <img src={quiz.picture} alt={quiz.title} />
+              </Link>
+            ))
+          ) : (
+            <p>Aucun quiz disponible pour le moment.</p>
+          )}
         </section>
       </div>
     </div>

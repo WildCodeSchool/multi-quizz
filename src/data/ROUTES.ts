@@ -4,9 +4,9 @@ const apiRoutes = {
   INFOS: `${apiUrl}/api/infos`,
   QUESTION: (quizId: number, questionNumber: number) =>
     `${apiUrl}/api/quizzes/${quizId}/questions/${questionNumber}`,
-  QUIZ: `${apiUrl}/api/quizz`,
   ANSWERS: (quizId: number, questionNumber: number) =>
     `${apiUrl}/api/quizzes/${quizId}/questions/${questionNumber}/answers`,
+  QUIZZES: `${apiUrl}/api/quizzes`,
 };
 
 const appRoutes = {
