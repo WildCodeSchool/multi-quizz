@@ -19,7 +19,6 @@ export default async function Home() {
               </div>
               <div className={styles.linkContact}>
                 <Link className={styles.Contact} href="/contact">
-                <Link className={styles.Contact} href="/contact">
                   contact
                 </Link>
               </div>
