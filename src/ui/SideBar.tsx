@@ -23,7 +23,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         <nav className={styles.sidebarNavContent}>
           <ul className={styles.sidebarUl}>
             <li className={styles.about}>
-              <Link href="/about" onClick={onClose}>
+              <Link href="/a-propos" onClick={onClose}>
                 À propos
               </Link>
             </li>
