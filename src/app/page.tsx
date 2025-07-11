@@ -9,12 +9,12 @@ export default function Home() {
           <nav className={styles.navContent}>
             <div className={styles.linkLeft}>
               <div className={styles.linkAbout}>
-                <Link className={styles.About} href="/About">
+                <Link className={styles.About} href="/a-propos">
                   à propos
                 </Link>
               </div>
               <div className={styles.linkContact}>
-                <Link className={styles.Contact} href="/Contact">
+                <Link className={styles.Contact} href="/contact">
                   contact
                 </Link>
               </div>
@@ -22,12 +22,12 @@ export default function Home() {
 
             <div className={styles.linkRight}>
               <div className={styles.linkAccount}>
-                <Link className={styles.Account} href="/Account">
+                <Link className={styles.Account} href="/compte">
                   compte
                 </Link>
               </div>
               <div className={styles.linkSubscription}>
-                <Link className={styles.Subscription} href="/Subscription">
+                <Link className={styles.Subscription} href="/inscription">
                   inscription
                 </Link>
               </div>

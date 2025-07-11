@@ -23,7 +23,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         <nav className={styles.sidebarNavContent}>
           <ul className={styles.sidebarUl}>
             <li className={styles.about}>
-              <Link href="/about" onClick={onClose}>
+              <Link href="/a-propos" onClick={onClose}>
                 À propos
               </Link>
             </li>
@@ -33,12 +33,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               </Link>
             </li>
             <li className={styles.account}>
-              <Link href="/account" onClick={onClose}>
+              <Link href="/compte" onClick={onClose}>
                 Compte
               </Link>
             </li>
             <li className={styles.subscription}>
-              <Link href="/subscription" onClick={onClose}>
+              <Link href="/inscription" onClick={onClose}>
                 Inscription
               </Link>
             </li>
