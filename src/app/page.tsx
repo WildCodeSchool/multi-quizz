@@ -13,7 +13,7 @@ export default async function Home() {
           <nav className={styles.navContent}>
             <div className={styles.linkLeft}>
               <div className={styles.linkAbout}>
-                <Link className={styles.About} href="/about">
+                <Link className={styles.About} href="/a-propos">
                   à propos
                 </Link>
               </div>
@@ -25,12 +25,12 @@ export default async function Home() {
             </div>
             <div className={styles.linkRight}>
               <div className={styles.linkAccount}>
-                <Link className={styles.Account} href="/account">
+                <Link className={styles.Account} href="/compte">
                   compte
                 </Link>
               </div>
               <div className={styles.linkSubscription}>
-                <Link className={styles.Subscription} href="/subscription">
+                <Link className={styles.Subscription} href="/inscription">
                   inscription
                 </Link>
               </div>

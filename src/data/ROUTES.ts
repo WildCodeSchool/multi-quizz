@@ -13,6 +13,9 @@ const appRoutes = {
   INFOS_ADD: `${appUrl}/infos/ajouter-info`,
   INFOS_EDIT: (id: number) => `${appUrl}/infos/${id}/editer-info`,
 
+  QUESTIONS_NUMBER: (quizId: number, questionNumber: number) =>
+    `${appUrl}/quizzes/${quizId}/questions/${questionNumber}`,
+
   QUIZ: `${appUrl}/quiz`,
   QUIZ_ID: (id: number) => `${appUrl}/quiz/${id}`,
   QUIZ_ADD: `${appUrl}/quiz/ajouter-quiz`,
