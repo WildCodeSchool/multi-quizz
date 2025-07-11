@@ -1,7 +1,7 @@
 export class AnswerModel {
   constructor(
     private _id: number,
-    private _question_id: number,
+    private _question_number: number,
     private _answer: string,
     private _is_correct: boolean
   ) {}
@@ -10,11 +10,11 @@ export class AnswerModel {
     return this._id;
   }
 
-  get question_id(): number {
-    return this._question_id;
+  get question_number(): number {
+    return this._question_number;
   }
-  set question_id(value: number) {
-    this._question_id = value;
+  set question_number(value: number) {
+    this._question_number = value;
   }
 
   get answer(): string {
