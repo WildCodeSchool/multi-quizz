@@ -36,8 +36,8 @@ export async function GET(
     const question = results[0];
 
     const [answerRows] = await db.query(
-      "SELECT a.id, a.answer, a.is_correct FROM Answer AS a JOIN Questions AS q ON a.question_id = q.id WHERE q.id = ? AND q.number = ?",
-      [question.id, question.number]
+      "SELECT a.id, a.answer, a.is_correct FROM Answer AS a JOIN Questions AS q ON a.question_id = q.id WHERE q.quiz_id = ? AND q.number = ?",
+      [question.quiz_id, question.number]
     );
     const answers = Array.isArray(answerRows)
       ? (answerRows as AnswerModel[])
