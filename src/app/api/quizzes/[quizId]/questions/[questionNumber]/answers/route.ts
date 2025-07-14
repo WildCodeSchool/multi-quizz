@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { quizMessages } from "@/data/responseMessages";
 import { AnswerModel } from "@/model/AnswerModel";
-import { QuestionModel } from "@/model/questionModel";
+import { QuestionModel } from "@/model/QuestionModel";
 
 export async function GET(
   _req: Request,
@@ -36,8 +36,8 @@ export async function GET(
     const question = results[0];
 
     const [answerRows] = await db.query(
-      "SELECT id, answer, is_correct, question_number FROM Answer WHERE question_number = ?",
-      [question.number]
+      "SELECT a.id, a.answer, a.is_correct FROM Answer AS a JOIN Questions AS q ON a.question_number = q.number WHERE q.quiz_id = ? AND q.number = ?",
+      [question.quiz_id, question.number]
     );
     const answers = Array.isArray(answerRows)
       ? (answerRows as AnswerModel[])

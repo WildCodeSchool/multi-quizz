@@ -1,53 +1,53 @@
 export const questionsFilms = [
-  { id: 11, quiz_id: 2, question: "Qui a réalisé Inception ?", number: 11 },
+  { id: 11, quiz_id: 2, question: "Qui a réalisé Inception ?", number: 1 },
   {
     id: 12,
     quiz_id: 2,
     question: "Quel film a gagné l'Oscar du meilleur film en 2020 ?",
-    number: 12,
+    number: 2,
   },
   {
     id: 13,
     quiz_id: 2,
     question: "Dans quel film trouve-t-on Dark Vador ?",
-    number: 13,
+    number: 3,
   },
   {
     id: 14,
     quiz_id: 2,
     question: "Quel est le plus gros succès mondial du cinéma ?",
-    number: 14,
+    number: 4,
   },
-  { id: 15, quiz_id: 2, question: "Quel acteur joue Iron Man ?", number: 15 },
+  { id: 15, quiz_id: 2, question: "Quel acteur joue Iron Man ?", number: 5 },
   {
     id: 16,
     quiz_id: 2,
     question: "Quel film met en scène Nemo le poisson ?",
-    number: 16,
+    number: 6,
   },
   {
     id: 17,
     quiz_id: 2,
     question: "Qui joue le Joker dans The Dark Knight ?",
-    number: 17,
+    number: 7,
   },
   {
     id: 18,
     quiz_id: 2,
     question: "Dans quel film Will Smith combat-il des aliens le 4 juillet ?",
-    number: 18,
+    number: 8,
   },
   {
     id: 19,
     quiz_id: 2,
     question: "Quel film commence par 'Il était une fois en Amérique' ?",
-    number: 19,
+    number: 9,
   },
   {
     id: 20,
     quiz_id: 2,
     question: "Dans quel film entend-on la chanson 'Let it Go' ?",
-    number: 20,
+    number: 10,
   },
 ];
 

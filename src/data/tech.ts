@@ -1,43 +1,43 @@
 export const questionsTech = [
-  { id: 31, quiz_id: 4, question: "Qui a fondé Microsoft ?", number: 31 },
-  { id: 32, quiz_id: 4, question: "Que signifie 'IA' ?", number: 32 },
+  { id: 31, quiz_id: 4, question: "Qui a fondé Microsoft ?", number: 1 },
+  { id: 32, quiz_id: 4, question: "Que signifie 'IA' ?", number: 2 },
   {
     id: 33,
     quiz_id: 4,
     question: "Quel est l'OS mobile de Google ?",
-    number: 33,
+    number: 3,
   },
   {
     id: 34,
     quiz_id: 4,
     question: "En quelle année est sorti le premier iPhone ?",
-    number: 34,
+    number: 4,
   },
   {
     id: 35,
     quiz_id: 4,
     question: "Quel réseau social appartient à Meta ?",
-    number: 35,
+    number: 5,
   },
   {
     id: 36,
     quiz_id: 4,
     question: "Quel langage est à la base du web ?",
-    number: 36,
+    number: 6,
   },
   {
     id: 37,
     quiz_id: 4,
     question: "Quel est le moteur de recherche le plus utilisé ?",
-    number: 37,
+    number: 7,
   },
-  { id: 38, quiz_id: 4, question: "Qui a créé Tesla et SpaceX ?", number: 38 },
-  { id: 39, quiz_id: 4, question: "Qu'est-ce qu'un QR Code ?", number: 39 },
+  { id: 38, quiz_id: 4, question: "Qui a créé Tesla et SpaceX ?", number: 8 },
+  { id: 39, quiz_id: 4, question: "Qu'est-ce qu'un QR Code ?", number: 9 },
   {
     id: 40,
     quiz_id: 4,
     question: "Comment s'appelle l'assistant vocal d'Amazon ?",
-    number: 40,
+    number: 10,
   },
 ];
 
