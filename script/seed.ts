@@ -26,25 +26,25 @@ const listQuizData = [
   {
     id: 1,
     title: "Jeux-Vidéos",
-    picture: "logoq1.png",
+    picture: "/logoq1.png",
     slug: "jeux-videos",
   },
   {
     id: 2,
     title: "Films",
-    picture: "logoq2.png",
+    picture: "/logoq2.png",
     slug: "films",
   },
   {
     id: 3,
     title: "Culture Générale",
-    picture: "logoq3.png",
+    picture: "/logoq3.png",
     slug: "culture-generale",
   },
   {
     id: 4,
     title: "Nouvelles Technologies",
-    picture: "logoq4.png",
+    picture: "/logoq4.png",
     slug: "nouvelles-technologies",
   },
 ];

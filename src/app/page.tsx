@@ -1,24 +1,10 @@
 import Link from "next/link";
 import styles from "./page.module.css";
-import { db } from "../lib/db";
-import { Quiz } from "../types";
-
-async function getQuizzes(): Promise<Quiz[]> {
-  try {
-    const [rows] = await db.query(
-      "SELECT id, title, picture, slug FROM quizzes"
-    );
-
-    return rows as Quiz[];
-  } catch (error) {
-    console.error("Erreur lors de la récupération des quiz :", error);
-
-    return [];
-  }
-}
+import { getAllQuizzes } from "@/lib/getAllQuizzes";
+import { QuizModel } from "@/model/QuizModel";
 
 export default async function Home() {
-  const quizzes: Quiz[] = await getQuizzes();
+  const quizzes: QuizModel[] = await getAllQuizzes();
 
   return (
     <div className={styles.backgroundImage}>
@@ -27,7 +13,7 @@ export default async function Home() {
           <nav className={styles.navContent}>
             <div className={styles.linkLeft}>
               <div className={styles.linkAbout}>
-                <Link className={styles.About} href="/about">
+                <Link className={styles.About} href="/a-propos">
                   à propos
                 </Link>
               </div>
@@ -37,15 +23,14 @@ export default async function Home() {
                 </Link>
               </div>
             </div>
-
             <div className={styles.linkRight}>
               <div className={styles.linkAccount}>
-                <Link className={styles.Account} href="/account">
+                <Link className={styles.Account} href="/compte">
                   compte
                 </Link>
               </div>
               <div className={styles.linkSubscription}>
-                <Link className={styles.Subscription} href="/subscription">
+                <Link className={styles.Subscription} href="/inscription">
                   inscription
                 </Link>
               </div>
@@ -56,10 +41,7 @@ export default async function Home() {
         <section className={styles.ImgButtonQuiz}>
           {quizzes.length > 0 ? (
             quizzes.map((quiz: Quiz) => (
-              <Link
-                href={`/quizzes/${quiz.slug}/questions/1/answers`}
-                key={quiz.id}
-              >
+              <Link href={`/quiz/${quiz.slug}`} key={quiz.id}>
                 <img src={quiz.picture} alt={quiz.title} />
               </Link>
             ))
