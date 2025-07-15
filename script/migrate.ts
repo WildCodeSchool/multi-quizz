@@ -22,7 +22,7 @@ const schema = `
 
     CREATE TABLE IF NOT EXISTS Answer (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    question_id INT NOT NULL,
+    question_number INT NOT NULL,
     answer VARCHAR(255) NOT NULL,
     is_correct BOOLEAN NOT NULL
   );
