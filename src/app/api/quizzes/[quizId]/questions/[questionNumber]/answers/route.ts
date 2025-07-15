@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { quizMessages } from "@/data/responseMessages";
 import { AnswerModel } from "@/model/AnswerModel";
-import { QuestionModel } from "@/model/QuestionModel";
 
 export async function GET(
   _req: Request,
@@ -20,30 +19,23 @@ export async function GET(
   }
 
   try {
-    const [rows] = await db.query(
-      "SELECT id, question, quiz_id, number FROM Questions WHERE quiz_id = ? AND number = ?",
+    const [answerRows] = await db.query(
+      "SELECT a.id, a.answer, a.is_correct FROM Answer AS a JOIN Questions AS q ON a.question_number = q.number WHERE q.quiz_id = ? AND q.number = ?",
       [quizIdInt, questionNumberInt]
     );
-    const results = Array.isArray(rows) ? (rows as QuestionModel[]) : [];
 
-    if (results.length === 0) {
+    const answers = Array.isArray(answerRows)
+      ? (answerRows as AnswerModel[])
+      : [];
+
+    if (answers.length === 0) {
       return NextResponse.json(
         { error: quizMessages.notFoundQuestion },
         { status: 404 }
       );
     }
 
-    const question = results[0];
-
-    const [answerRows] = await db.query(
-      "SELECT a.id, a.answer, a.is_correct FROM Answer AS a JOIN Questions AS q ON a.question_number = q.number WHERE q.quiz_id = ? AND q.number = ?",
-      [question.quiz_id, question.number]
-    );
-    const answers = Array.isArray(answerRows)
-      ? (answerRows as AnswerModel[])
-      : [];
-
-    return NextResponse.json({ question, answers });
+    return NextResponse.json({ answers });
   } catch (error) {
     console.error(
       "Error fetching question and answers(GET /api/quizzes/[quizId]/questions/[questionNumber]/answers) :",
