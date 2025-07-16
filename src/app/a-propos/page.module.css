@@ -1,0 +1,55 @@
+.about {
+  background-image: url("/About.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "MedievalSharp", sans-serif;
+}
+
+.text {
+  text-align: center;
+  color: black;
+  max-width: 70%;
+  line-height: 1.6;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.2rem;
+}
+
+.btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background-color: #a9c38a;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 25px;
+  border: 3px solid #a9c38a;
+  border-radius: 8px 15px 5px 15px;
+  transform: skewX(-15deg);
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 480px) {
+  .centered {
+    font-size: 0.9rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    top: 10px;
+    right: 10px;
+  }
+}
