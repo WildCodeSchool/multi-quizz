@@ -1,52 +1,117 @@
-"use Client";
+"use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter, useParams } from "next/navigation";
+
+interface QuestionData {
+  id: number;
+  question: string;
+  quiz_id: number;
+  number: number;
+}
+
+interface AnswerData {
+  id: number;
+  answer: string;
+  is_correct: boolean;
+}
 
 const QuestionPage = () => {
   const router = useRouter();
+  const params = useParams();
+  const quizId = params.quizId as string;
+  const questionNumber = params.questionNumber as string;
 
-  // TypeScript peut parfois avoir besoin d'aide pour savoir que quizId et questionNumber
-  // seront bien des chaînes de caractères (string).
-  // On récupère ce que le détective a trouvé dans l'adresse :
-  const { quizId, questionNumber } = router.query;
+  const [question, setQuestion] = useState<QuestionData | null>(null);
+  const [answers, setAnswers] = useState<AnswerData[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // On se souvient de la petite précaution : et si le détective n'a pas encore fini ?
-  // On affiche un petit message "Chargement..."
-  // 'quizId' et 'questionNumber' seront undefined au premier rendu côté client
-  // tant que les paramètres de l'URL ne sont pas encore prêts.
-  if (!quizId || !questionNumber) {
-    return <p>Chargement des informations de la question...</p>;
+  useEffect(() => {
+    const fetchQuestionAndAnswers = async () => {
+      setIsLoading(true);
+      setError(null);
+
+      if (!quizId || !questionNumber) {
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        const questionApiUrl = `/api/quizzes/${quizId}/questions/${questionNumber}`;
+        const questionRes = await fetch(questionApiUrl);
+
+        if (!questionRes.ok) {
+          throw new Error(
+            `Erreur lors de la récupération de la question: ${questionRes.statusText}`
+          );
+        }
+        const questionData: QuestionData = await questionRes.json();
+        setQuestion(questionData);
+
+        const answersApiUrl = `/api/quizzes/${quizId}/questions/${questionNumber}/answers`;
+        const answersRes = await fetch(answersApiUrl);
+
+        if (!answersRes.ok) {
+          throw new Error(
+            `Erreur lors de la récupération des réponses: ${answersRes.statusText}`
+          );
+        }
+        const answersData: { answers: AnswerData[] } = await answersRes.json();
+        setAnswers(answersData.answers);
+      } catch (err: any) {
+        console.error("Erreur complète lors du fetch:", err);
+        setError(err.message || "Une erreur inconnue est survenue.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchQuestionAndAnswers();
+  }, [quizId, questionNumber]);
+
+  if (isLoading) {
+    return (
+      <div>
+        <p>Chargement de la question et des réponses...</p>
+      </div>
+    );
   }
 
-  // Si le détective a trouvé les infos, alors on les affiche !
+  if (error) {
+    return (
+      <div>
+        <p>Erreur: {error}</p>
+        <p>Impossible de charger la question. Veuillez réessayer plus tard.</p>
+      </div>
+    );
+  }
+
+  if (!question) {
+    return (
+      <div>
+        <p>Question non trouvée pour ce quiz et ce numéro.</p>
+      </div>
+    );
+  }
+
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Bienvenue sur la page de la Question du Quiz !</h1>
-      <p>
-        L'**ID du Quiz** est :{" "}
-        <span style={{ fontWeight: "bold", color: "#0070f3" }}>{quizId}</span>
-      </p>
-      <p>
-        Le **Numéro de la Question** est :{" "}
-        <span style={{ fontWeight: "bold", color: "#1a1a1a" }}>
-          {questionNumber}
-        </span>
-      </p>
+    <div>
+      <h2>{question.question}</h2>
 
-      <hr style={{ margin: "30px 0" }} />
-
-      <section>
-        <h2>Prochaine étape : Afficher la question réelle</h2>
-        <p>
-          Pour l'instant, tu vois juste l'ID du quiz et le numéro de la
-          question. La prochaine étape sera de récupérer le texte de la question
-          et ses options depuis ta base de données.
-        </p>
-      </section>
+      <div>
+        {answers.length > 0 ? (
+          <ul>
+            {answers.map((answer) => (
+              <li key={answer.id}>{answer.answer}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>Aucune option de réponse trouvée pour cette question.</p>
+        )}
+      </div>
     </div>
   );
 };
 
-// C'est important d'exporter ton composant pour que Next.js puisse l'utiliser comme page
 export default QuestionPage;
