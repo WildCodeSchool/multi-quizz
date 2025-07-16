@@ -40,8 +40,8 @@ export default async function Home() {
 
         <section className={styles.ImgButtonQuiz}>
           {quizzes.length > 0 ? (
-            quizzes.map((quiz: Quiz) => (
-              <Link href={`/quiz/${quiz.slug}`} key={quiz.id}>
+            quizzes.map((quiz) => (
+              <Link href={`/quiz/${quiz.id}/questions/1`} key={quiz.id}>
                 <img src={quiz.picture} alt={quiz.title} />
               </Link>
             ))
