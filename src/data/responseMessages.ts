@@ -29,4 +29,5 @@ export const quizMessages = {
   loadingErrorQuestions: "Impossible de charger les questions",
   loadingErrorAnswers: "Impossible de charger les réponses",
   notFoundQuestion: "Question non trouvée",
+  notFoundAnswer: "Réponse non trouvée",
 };
