@@ -8,6 +8,7 @@ export async function GET(
   { params }: { params: { quizId: string; questionNumber: string } }
 ) {
   const { quizId, questionNumber } = await params;
+  console.log(quizId, questionNumber);
   const quizIdInt = parseInt(quizId, 10);
   const questionNumberInt = parseInt(questionNumber, 10);
 
@@ -20,7 +21,7 @@ export async function GET(
 
   try {
     const [answerRows] = await db.query(
-      "SELECT a.id, a.answer, a.is_correct FROM Answer AS a JOIN Questions AS q ON a.question_number = q.number WHERE q.quiz_id = ? AND q.number = ?",
+      "SELECT a.id, a.answer, a.is_correct FROM Answer AS a JOIN Questions AS q ON a.question_number = q.number WHERE q.quiz_id = ? AND a.question_number = ?",
       [quizIdInt, questionNumberInt]
     );
 
