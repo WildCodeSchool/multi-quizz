@@ -8,7 +8,6 @@ export async function GET(
   { params }: { params: { quizId: string; questionNumber: string } }
 ) {
   const { quizId, questionNumber } = await params;
-  console.log(quizId, questionNumber);
   const quizIdInt = parseInt(quizId, 10);
   const questionNumberInt = parseInt(questionNumber, 10);
 
