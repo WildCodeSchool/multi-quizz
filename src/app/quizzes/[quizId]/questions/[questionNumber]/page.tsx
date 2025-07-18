@@ -1,6 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import { Question, Answer } from "@/types";
-import styles from "./page.module.css";
+import QuestionDisplay from "@/ui/QuestionDisplay";
 
 interface QuestionPageProps {
   params: {
@@ -51,26 +51,12 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
     notFound();
   }
 
-  const answerLabels = ["A", "B", "C", "D", "E", "F", "G", "H"];
-
   return (
-    <>
-      <div className={styles.backgroundImage}></div>
-
-      <div className={styles.questionContainer}>
-        <h2 className={styles.questionTitle}>{question!.question}</h2>
-      </div>
-
-      <div className={styles.answersContainer}>
-        {answers.map((answer, index) => (
-          <div key={answer.id} className={styles.answerItem}>
-            {answerLabels[index] && (
-              <span className={styles.answerLabel}>{answerLabels[index]}</span>
-            )}
-            <button className={styles.answerButton}>{answer.answer}</button>
-          </div>
-        ))}
-      </div>
-    </>
+    <QuestionDisplay
+      quizId={quizId}
+      questionNumber={questionNumber}
+      question={question!}
+      answers={answers}
+    />
   );
 }
