@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./quizDisplay.module.css";
+import styles from "./QuestionDisplay.module.css";
 import { Question, Answer } from "@/types";
 
 interface QuestionDisplayProps {
