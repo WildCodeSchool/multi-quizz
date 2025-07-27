@@ -1,24 +1,50 @@
 .about {
+  min-height: 100vh;
+  width: 100%;
   background-image: url("/About.png");
-  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
+  font-family: "Folkard", sans-serif;
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 2.3rem;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+.knightContainer {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.knight {
+  width: 75rem;
+  height: auto;
+}
+
+.mainContent {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  font-family: "MedievalSharp", sans-serif;
+  align-items: flex-start;
+  min-height: 68vh;
+  margin-left: 2.3rem;
 }
 
 .text {
-  text-align: center;
-  color: black;
-  max-width: 70%;
+  font-size: 1.15rem;
+  max-width: 480px;
+  text-align: left;
+  color: #232323;
   line-height: 1.6;
-  background-color: rgba(255, 255, 255, 0);
-  font-size: 1.2rem;
 }
 
 .btn {
@@ -30,8 +56,9 @@
   font-weight: bold;
   font-size: 1rem;
   padding: 10px 25px;
-  border: 3px solid #a9c38a;
+  border: 3px solid black;
   border-radius: 8px 15px 5px 15px;
+  box-shadow: 10px 5px 5px rgb(141, 138, 138);
   transform: skewX(-15deg);
   cursor: pointer;
 }
@@ -40,16 +67,64 @@
   transform: scale(1.03);
 }
 
-@media (max-width: 480px) {
-  .centered {
-    font-size: 0.9rem;
-    padding: 1rem 0.5rem;
+.avatars {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2.5px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 2px 8px #0002;
+  transition: transform 0.2s;
+}
+
+.avatar:hover {
+  transform: scale(1.08);
+  border-color: #a9c38a;
+}
+
+@media (max-width: 1200px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  .btn {
+  .mainContent {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text {
+    text-align: center;
     font-size: 0.9rem;
-    padding: 8px 16px;
-    top: 10px;
-    right: 10px;
+  }
+
+  .title {
+    margin-top: 3rem;
+  }
+
+  .avatars {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .knightContainer {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .text {
+      font-size: 1.5rem;
+    }
   }
 }
