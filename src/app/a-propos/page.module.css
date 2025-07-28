@@ -72,6 +72,8 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 1.5rem;
+  position: relative;
+  z-index: 10;
 }
 
 .avatar {
@@ -110,12 +112,6 @@
 
   .title {
     margin-top: 3rem;
-  }
-
-  .avatars {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
   }
 
   .knightContainer {
