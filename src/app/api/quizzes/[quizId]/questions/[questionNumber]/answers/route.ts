@@ -20,7 +20,7 @@ export async function GET(
 
   try {
     const [answerRows] = await db.query(
-      "SELECT a.id, a.answer, a.is_correct FROM Answer AS a JOIN Questions AS q ON a.question_number = q.number WHERE q.quiz_id = ? AND a.question_number = ?",
+      "SELECT a.id, a.answer, a.is_correct FROM Answer AS a JOIN Questions AS q ON a.question_id = q.id WHERE q.quiz_id = ? AND q.number = ?",
       [quizIdInt, questionNumberInt]
     );
 
