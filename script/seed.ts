@@ -72,10 +72,10 @@ const seed = async () => {
       );
     }
 
-    for (const { question_number, answer, is_correct } of answersData) {
+    for (const { question_id, answer, is_correct } of answersData) {
       await connection.query(
-        "INSERT INTO Answer (question_number, answer, is_correct) VALUES (?, ?, ?)",
-        [question_number, answer, is_correct]
+        "INSERT INTO Answer (question_id, answer, is_correct) VALUES (?, ?, ?)",
+        [question_id, answer, is_correct]
       );
     }
 
