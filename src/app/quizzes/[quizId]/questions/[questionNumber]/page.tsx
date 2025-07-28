@@ -9,6 +9,15 @@ interface QuestionPageProps {
   };
 }
 
+const shuffleArray = (array: any[]) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 export default async function QuestionPage({ params }: QuestionPageProps) {
   const { quizId, questionNumber: questionNumberString } = params;
   const questionNumber = parseInt(questionNumberString, 10);
@@ -51,12 +60,14 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
     notFound();
   }
 
+  const shuffledAnswers = shuffleArray(answers);
+
   return (
     <QuestionDisplay
       quizId={quizId}
       questionNumber={questionNumber}
       question={question!}
-      answers={answers}
+      answers={shuffledAnswers}
     />
   );
 }
