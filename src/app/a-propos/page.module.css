@@ -1,0 +1,126 @@
+.about {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("/About.png");
+  background-size: cover;
+  background-position: center;
+  font-family: "Folkard", sans-serif;
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 2.3rem;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+.knightContainer {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.knight {
+  width: 75rem;
+  height: auto;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 68vh;
+  margin-left: 2.3rem;
+}
+
+.text {
+  font-size: 1.15rem;
+  max-width: 480px;
+  text-align: left;
+  color: #232323;
+  line-height: 1.6;
+}
+
+.btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background-color: #a9c38a;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 25px;
+  border: 3px solid black;
+  border-radius: 8px 15px 5px 15px;
+  box-shadow: 10px 5px 5px rgb(141, 138, 138);
+  transform: skewX(-15deg);
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.avatars {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2.5px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 2px 8px #0002;
+  transition: transform 0.2s;
+}
+
+.avatar:hover {
+  transform: scale(1.08);
+  border-color: #a9c38a;
+}
+
+@media (max-width: 1200px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mainContent {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .title {
+    margin-top: 3rem;
+  }
+
+  .knightContainer {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .text {
+      font-size: 1.5rem;
+    }
+  }
+}

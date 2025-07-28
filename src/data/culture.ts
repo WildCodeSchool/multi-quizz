@@ -62,18 +62,18 @@ export const answersCulture = [
   { question_id: 21, answer: "Océan Indien", is_correct: false },
   { question_id: 21, answer: "Océan Arctique", is_correct: false },
 
-  { question_id: 22, answer: "6", is_correct: true },
   { question_id: 22, answer: "5", is_correct: false },
   { question_id: 22, answer: "7", is_correct: false },
   { question_id: 22, answer: "8", is_correct: false },
+  { question_id: 22, answer: "6", is_correct: true },
 
   { question_id: 23, answer: "Au", is_correct: true },
   { question_id: 23, answer: "Ag", is_correct: false },
   { question_id: 23, answer: "Fe", is_correct: false },
   { question_id: 23, answer: "Cu", is_correct: false },
 
-  { question_id: 24, answer: "1789", is_correct: true },
   { question_id: 24, answer: "1914", is_correct: false },
+  { question_id: 24, answer: "1789", is_correct: true },
   { question_id: 24, answer: "1848", is_correct: false },
   { question_id: 24, answer: "1492", is_correct: false },
 
@@ -82,14 +82,14 @@ export const answersCulture = [
   { question_id: 25, answer: "Jupiter", is_correct: false },
   { question_id: 25, answer: "Mercure", is_correct: false },
 
-  { question_id: 26, answer: "Victor Hugo", is_correct: true },
   { question_id: 26, answer: "Émile Zola", is_correct: false },
   { question_id: 26, answer: "Gustave Flaubert", is_correct: false },
+  { question_id: 26, answer: "Victor Hugo", is_correct: true },
   { question_id: 26, answer: "Albert Camus", is_correct: false },
 
-  { question_id: 27, answer: "Nil", is_correct: true },
   { question_id: 27, answer: "Amazone", is_correct: false },
   { question_id: 27, answer: "Yangtsé", is_correct: false },
+  { question_id: 27, answer: "Nil", is_correct: true },
   { question_id: 27, answer: "Mississippi", is_correct: false },
 
   { question_id: 28, answer: "Léonard de Vinci", is_correct: true },
@@ -97,9 +97,9 @@ export const answersCulture = [
   { question_id: 28, answer: "Rembrandt", is_correct: false },
   { question_id: 28, answer: "Monet", is_correct: false },
 
-  { question_id: 29, answer: "France", is_correct: true },
   { question_id: 29, answer: "Brésil", is_correct: false },
   { question_id: 29, answer: "Allemagne", is_correct: false },
+  { question_id: 29, answer: "France", is_correct: true },
   { question_id: 29, answer: "Argentine", is_correct: false },
 
   { question_id: 30, answer: "6", is_correct: true },
