@@ -1,23 +1,16 @@
-.Timer {
+.trackerContainer {
+  display: flex;
+  align-items: center;
   font-family: var(--font-montserrat);
-  font-size: 96px;
+  font-size: 32px;
   font-weight: 800;
   color: yellow;
   text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black,
     3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px -3px 0 black,
     0px 3px 0 black;
+  gap: 0;
 }
 
-.timerContainer {
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0px;
-  z-index: 1000;
-}
-
-.hourglassImage {
-  max-width: 100%;
-  height: auto;
+.separator {
+  margin: 0 5px;
 }

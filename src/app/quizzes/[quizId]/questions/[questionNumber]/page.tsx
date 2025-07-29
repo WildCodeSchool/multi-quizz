@@ -2,6 +2,8 @@ import { notFound, redirect } from "next/navigation";
 import { Question, Answer } from "@/types";
 import QuestionDisplay from "@/ui/QuestionDisplay";
 import Countdown from "@/ui/Countdown";
+import QuestionTracker from "@/ui/QuestionTracker";
+import styles from "@/app/quizzes/[quizId]/questions/[questionNumber]/quizPage.module.css";
 
 interface QuestionPageProps {
   params: {
@@ -22,6 +24,8 @@ const shuffleArray = (array: Answer[]): Answer[] => {
 export default async function QuestionPage({ params }: QuestionPageProps) {
   const { quizId, questionNumber: questionNumberString } = params;
   const questionNumber = parseInt(questionNumberString, 10);
+
+  const totalQuestions = 10;
 
   if (!quizId || isNaN(questionNumber)) {
     notFound();
@@ -65,7 +69,13 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
 
   return (
     <div>
-      <Countdown />
+      <div className={styles.UIContainer}>
+        <Countdown />
+        <QuestionTracker
+          currentQuestion={questionNumber}
+          totalQuestions={totalQuestions}
+        />
+      </div>
       <QuestionDisplay
         quizId={quizId}
         questionNumber={questionNumber}
