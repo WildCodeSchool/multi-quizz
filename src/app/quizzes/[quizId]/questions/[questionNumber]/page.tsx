@@ -1,6 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { Question, Answer } from "@/types";
 import QuestionDisplay from "@/ui/QuestionDisplay";
+import Countdown from "@/ui/Countdown";
 
 interface QuestionPageProps {
   params: {
@@ -63,11 +64,14 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
   const shuffledAnswers = shuffleArray(answers);
 
   return (
-    <QuestionDisplay
-      quizId={quizId}
-      questionNumber={questionNumber}
-      question={question!}
-      answers={shuffledAnswers}
-    />
+    <div>
+      <Countdown />
+      <QuestionDisplay
+        quizId={quizId}
+        questionNumber={questionNumber}
+        question={question!}
+        answers={shuffledAnswers}
+      />
+    </div>
   );
 }
