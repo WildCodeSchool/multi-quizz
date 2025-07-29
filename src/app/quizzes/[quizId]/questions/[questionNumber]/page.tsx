@@ -9,7 +9,7 @@ interface QuestionPageProps {
   };
 }
 
-const shuffleArray = (array: any[]) => {
+const shuffleArray = (array: Answer[]): Answer[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

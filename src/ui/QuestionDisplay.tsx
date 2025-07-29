@@ -23,7 +23,7 @@ const QuestionDisplay = ({
   const [selectedAnswerId, setSelectedAnswerId] = useState<number | null>(null);
 
   const totalQuestions = 10;
-  const answerLabels = ["A", "B", "C", "D", "E", "F", "G", "H"];
+  const answerLabels = ["A", "B", "C", "D"];
 
   const handleSelectAnswer = (answer: Answer) => {
     if (selectedAnswerId !== null) return;
