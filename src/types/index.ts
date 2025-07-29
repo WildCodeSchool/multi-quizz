@@ -1,6 +1,3 @@
-export interface Quiz {
-  id: number;
-  title: string;
-  picture: string;
-  slug: string;
-}
+export * from "./quiz";
+export * from "./question";
+export * from "./answer";
