@@ -22,6 +22,7 @@ const QuestionDisplay = ({
 
   const [selectedAnswerId, setSelectedAnswerId] = useState<number | null>(null);
 
+  const totalQuestions = 10;
   const answerLabels = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
   const handleSelectAnswer = (answer: Answer) => {
@@ -30,7 +31,11 @@ const QuestionDisplay = ({
     setSelectedAnswerId(answer.id);
 
     setTimeout(() => {
-      router.push(`/quizzes/${quizId}/questions/${questionNumber + 1}`);
+      const nextQuestionNumber = questionNumber + 1;
+
+      if (nextQuestionNumber <= totalQuestions) {
+        router.push(`/quizzes/${quizId}/questions/${nextQuestionNumber}`);
+      }
     }, 1500);
   };
 
