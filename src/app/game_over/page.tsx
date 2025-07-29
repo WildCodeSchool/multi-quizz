@@ -1,4 +1,4 @@
-import styles from "./congratulation.module.css";
+import styles from "./game_over.module.css";
 import Link from "next/link";
 
 export default function Congratulation() {
@@ -7,15 +7,11 @@ export default function Congratulation() {
       <div className={styles.backgroundImage}></div>
 
       <img
-        className={styles.Image_congratulation}
-        src="/congratulation.png"
-        alt="logo congratulation"
+        className={styles.Image_game_over}
+        src="/game_over.png"
+        alt="logo game over"
       />
-      <img
-        className={styles.image_Trophy}
-        src="/trophy.png"
-        alt="logo trophy"
-      />
+      <img className={styles.image_loose} src="/loose.png" alt="logo trophy" />
 
       <div className={styles.btn_Container}>
         <Link href="/">
