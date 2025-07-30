@@ -1,7 +1,7 @@
 import styles from "./game_over.module.css";
 import Link from "next/link";
 
-export default function Congratulation() {
+export default function game_over() {
   return (
     <>
       <div className={styles.backgroundImage}></div>

@@ -1,13 +1,26 @@
 "use client";
+
 import styles from "./Countdown.module.css";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const Countdown = () => {
+interface CountdownProps {
+  onTimeUp: () => void;
+  keyTrigger: number;
+}
+
+const Countdown = ({ onTimeUp, keyTrigger }: CountdownProps) => {
   const [seconds, setSeconds] = useState(30);
 
   useEffect(() => {
-    if (seconds <= 0) return;
+    setSeconds(30);
+  }, [keyTrigger]);
+
+  useEffect(() => {
+    if (seconds <= 0) {
+      onTimeUp();
+      return;
+    }
 
     const timer = setInterval(() => {
       setSeconds((prev) => prev - 1);

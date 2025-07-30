@@ -1,0 +1,12 @@
+.UIContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+.pv {
+  margin-bottom: 200px;
+}
