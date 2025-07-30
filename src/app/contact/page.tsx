@@ -12,7 +12,8 @@ export default function Contact() {
   );
   const [successMessage, setSuccessMessage] = useState("");
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setErrors({});
     setSuccessMessage("");
 
