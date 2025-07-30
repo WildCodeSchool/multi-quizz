@@ -6,20 +6,43 @@
   text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black,
     3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px -3px 0 black,
     0px 3px 0 black;
-}
-
-.timerContainer {
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0px;
-  z-index: 1000;
-  top: 150px;
-  right: 20px;
+  order: 1;
 }
 
 .hourglassImage {
   max-width: 100%;
   height: auto;
+  order: 2;
+}
+
+.timerContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+  top: 230px;
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .Timer {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .timerContainer {
+    top: 140px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    flex-direction: row-reverse;
+    gap: 5px;
+  }
+
+  .hourglassImage {
+    max-width: 50%;
+    position: sticky;
+  }
 }
