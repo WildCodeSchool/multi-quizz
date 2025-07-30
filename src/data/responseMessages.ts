@@ -30,4 +30,5 @@ export const quizMessages = {
   loadingErrorAnswers: "Impossible de charger les réponses",
   notFoundQuestion: "Question non trouvée",
   notFoundAnswer: "Réponse non trouvée",
+  errorMailMessage: "Email et message requis",
 };
