@@ -1,5 +1,5 @@
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-const appUrl = process.env.NEXT_PUBLIC_APP_URL;
+const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+const appUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 const apiRoutes = {
   INFOS: `${apiUrl}/api/infos`,
   QUESTION: (quizId: number, questionNumber: number) =>
