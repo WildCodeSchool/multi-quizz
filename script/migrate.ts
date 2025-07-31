@@ -25,6 +25,12 @@ const schema = `
     question_id INT NOT NULL,
     answer VARCHAR(255) NOT NULL,
     is_correct BOOLEAN NOT NULL
+
+    CREATE TABLE IF NOT EXISTS Contact (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
 `;
 
